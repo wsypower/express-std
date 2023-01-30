@@ -1,0 +1,12 @@
+{
+  "name": "api-tsd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api-tsd": "nodemon --exec ts-node src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
