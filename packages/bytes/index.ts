@@ -16,5 +16,20 @@ console.log(bytes(1024 * 1024 * 1024 * 1.75517452, {
   unit: 'kb',
   thousandsSeparator: "-",
 }));// => '1-840-433.877*-*kb'
-console.log(bytes('1000'));// => 1099511627776
+console.log('------------');
+
+console.log(bytes(1024));
+// output: '1KB'
+
+console.log(bytes(1024 * 1024));
+// output: '1MB'
+
+console.log(bytes(1024 * 1024 * 1024));
+// output: '1GB'
+
+console.log(bytes(1024 * 1024 * 1024 * 1024));
+// output: '1TB'
+
+console.log(bytes(1024 * 1024 * 1024 * 1024 * 1024));
+// output: '1PB'
 
