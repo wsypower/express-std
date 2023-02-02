@@ -2,22 +2,26 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-01-27 23:32:18
- * @LastEditTime: 2023-01-30 01:59:01
+ * @LastEditTime: 2023-02-03 02:18:13
  * @LastEditors: wsy
  */
 import express, { Request, Response, NextFunction } from 'express'
 import { readDB, writeDB } from './db-lib';
 import HttpException from './HttpException'
 import { has } from 'lodash'
-
+import { Hello } from './index';
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
+// 
+app.use((req, res, next) => {
+  console.log('Time: ', Date.now())
+  console.log(req.params);
+  next()
+})
+app.use('/hello', Hello)
 app.get('/todos', async (req, res, next) => {
   try {
-
-
     const db = await readDB()
     res.status(200).json(db.todo)
   } catch (err) {
