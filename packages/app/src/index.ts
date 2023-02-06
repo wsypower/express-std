@@ -1,17 +1,8 @@
 import express from 'express'
-
+import admin from './admin'
 const app = express()
-const admin = express()
 
-admin.get('/', (req, res) => {
-  console.log(req.baseUrl);
-  res.send('Admin Homepage');
-})
 
-admin.on('mount', function (parent) {
-  console.log('Admin Mounted')
-  console.log(parent === app); // true
-})
 
 app.use(express.json())
 app.use(express.urlencoded())
