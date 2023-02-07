@@ -1,7 +1,9 @@
 import express from 'express'
 import admin from './admin'
+import router from './router'
 const app = express()
-
+app.use('/admin', admin); // mount the sub app
+app.use('/router', router); // mount the sub app
 
 
 app.use(express.json())
@@ -16,18 +18,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 })
 
-app.param('id', (req, res, next, id) => {
-  console.log('id----', id);
-  next()
-})
 
-app.get('/:id', (req, res) => {
-  console.log('locals', app.locals);
-  res.send('Hello World!');
-})
-
-
-app.use('/admin', admin); // mount the sub app
 
 
 app.listen(3000, () => {
