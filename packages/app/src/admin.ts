@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-02-07 01:55:53
- * @LastEditTime: 2023-02-07 02:28:00
+ * @LastEditTime: 2023-02-10 01:55:50
  * @LastEditors: wsy
  */
 import express from 'express';
@@ -13,18 +13,15 @@ admin.on('mount', function (parent) {
 })
 
 admin.get('/', (req, res) => {
+  console.dir(req.range(1000))
   res.send('Admin Homepage');
 })
 
 admin.use((req, res, next) => {
   admin.set('title', false)
   admin.get('title')
-
   admin.enable('title')
-
-
   console.log(admin.locals);
-
   next()
 })
 

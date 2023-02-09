@@ -1,9 +1,7 @@
 import express from 'express'
 import admin from './admin'
-import router from './router'
 const app = express()
 app.use('/admin', admin); // mount the sub app
-app.use('/router', router); // mount the sub app
 
 
 app.use(express.json())
