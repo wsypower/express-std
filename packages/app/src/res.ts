@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-02-07 01:55:53
- * @LastEditTime: 2023-02-14 01:29:58
+ * @LastEditTime: 2023-02-14 01:33:29
  * @LastEditors: wsy
  */
 import express from 'express';
@@ -25,6 +25,11 @@ Response.get('/json', (req, res) => {
   // res.send({ name: 'tobi' });
 })
 
+Response.get('/sendStatus', (req, res) => {
+  res.sendStatus(404);
+
+  // res.send({ name: 'tobi' });
+})
 
 
 Response.use((req, res, next) => {
