@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-02-07 01:55:53
- * @LastEditTime: 2023-02-14 01:26:47
+ * @LastEditTime: 2023-02-14 01:28:40
  * @LastEditors: wsy
  */
 import express from 'express';
@@ -18,6 +18,10 @@ Response.get('/', (req, res) => {
 Response.get('/get', (req, res) => {
   console.log(res.get('Content-Type'));
   res.send('Response Homepage1');
+})
+
+Response.get('/json', (req, res) => {
+  res.send({ name: 'tobi' });
 })
 
 Response.use((req, res, next) => {
