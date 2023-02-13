@@ -1,8 +1,9 @@
 import express from 'express'
 import admin from './admin'
+import Response from './res'
 const app = express()
 app.use('/admin', admin); // mount the sub app
-
+app.use('/res', Response); // mount the sub app
 
 app.use(express.json())
 app.use(express.urlencoded())

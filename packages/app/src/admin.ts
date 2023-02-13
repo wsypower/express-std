@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-02-07 01:55:53
- * @LastEditTime: 2023-02-10 01:55:50
+ * @LastEditTime: 2023-02-10 02:05:23
  * @LastEditors: wsy
  */
 import express from 'express';
@@ -13,7 +13,7 @@ admin.on('mount', function (parent) {
 })
 
 admin.get('/', (req, res) => {
-  console.dir(req.range(1000))
+  console.dir(req.statusMessage)
   res.send('Admin Homepage');
 })
 
