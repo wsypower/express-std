@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-02-07 01:55:53
- * @LastEditTime: 2023-02-14 01:28:40
+ * @LastEditTime: 2023-02-14 01:29:58
  * @LastEditors: wsy
  */
 import express from 'express';
@@ -21,8 +21,11 @@ Response.get('/get', (req, res) => {
 })
 
 Response.get('/json', (req, res) => {
-  res.send({ name: 'tobi' });
+  res.redirect('/res/get')
+  // res.send({ name: 'tobi' });
 })
+
+
 
 Response.use((req, res, next) => {
   next()
